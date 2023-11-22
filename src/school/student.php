@@ -2,7 +2,7 @@
 
 namespace School;
 
-class student extends persoon {
+class Student extends Persoon {
 
     public string $studentnummer;
 

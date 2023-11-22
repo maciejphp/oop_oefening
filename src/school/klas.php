@@ -1,11 +1,11 @@
 <?php
 
 namespace School;
-use School\docent;
-use School\student;
+use School\Docent;
+use School\Student;
 
 
-class klas {
+class Klas {
 
     public object $docent;
     public array $studenten;

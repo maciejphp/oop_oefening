@@ -2,7 +2,7 @@
 
 namespace School;
 
-class persoon {
+class Persoon {
 
     private string $naam;
     public string $telefoonnummer;

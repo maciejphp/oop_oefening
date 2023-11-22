@@ -2,7 +2,7 @@
 
 namespace School;
 
-class docent extends persoon {
+class Docent extends Persoon {
 
     public function __construct($naam, $telefoonnummer, $password)
     {

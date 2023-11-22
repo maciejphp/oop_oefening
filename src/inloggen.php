@@ -1,12 +1,9 @@
 <?php
 
 
-
-use School\docent;
-use School\student;
 use School\klas;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 $klas = new klas();
 
@@ -32,7 +29,7 @@ if (isset($klas->studenten[$name])) {
 
         session_start();
         $_SESSION["html"] = $studentenlijst;
-        echo "<br><a href='../pdf.php'><button>download PDF</button></a>";
+        echo "<br><a href='pdf.php'><button>download PDF</button></a>";
     }else {
         echo "Invalide wachtwoord";
     }
@@ -51,6 +48,6 @@ if (isset($klas->studenten[$name])) {
     <title>Document</title>
 </head>
 <body>
-    <br><a href="../index.html">terug</a><br>
+    <br><a href="index.html">terug</a><br>
 </body>
 </html>
