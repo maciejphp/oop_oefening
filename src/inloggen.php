@@ -1,6 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
 <?php
-
-
 use School\klas;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -10,10 +17,6 @@ $klas = new klas();
 $name = $_POST["name"];
 $password = $_POST["password"];
 
-// $name = "Maciej";
-// $password = "wachtwoord";
-
-// $name = "Arda";
 
 echo "<h1>$name</h1>";
 
@@ -23,10 +26,12 @@ if (isset($klas->studenten[$name])) {
     $login = $klas->docent->login($password);
 
     if ($login) {
+        //render studendenlijst
         echo "Ingelogt met docent {$klas->docent->getnaam()}";
         $studentenlijst = $klas->getstudenten();
         echo $studentenlijst;
 
+        //render pdf btn
         session_start();
         $_SESSION["html"] = $studentenlijst;
         echo "<br><a href='pdf.php'><button>download PDF</button></a>";
@@ -36,18 +41,7 @@ if (isset($klas->studenten[$name])) {
 }else {
     echo "Invalide naam";
 }
-
-
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <br><a href="index.html">terug</a><br>
+    <br><a href="index.html"><button>terug</button></a><br>
 </body>
 </html>

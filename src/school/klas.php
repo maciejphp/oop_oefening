@@ -21,12 +21,21 @@ class Klas {
     }
 
     public function getstudenten() {
-        $data = "<br>";
+        $data = "<table>
+        <tr>
+        <th>Voornaam</th>
+        <th>Studentennummer</th>
+        <th>Telefoonnummer</th>
+      </tr>
+      ";
         foreach ($this->studenten as $student) {
-                $data = "$data " . $student->getnaam();
-                $data = "$data " . $student->studentnummer;
-                $data = "$data " . $student->telefoonnummer . "<br>";
+                $data = "$data<tr>";
+                $data = "$data<td>{$student->getnaam()}</td>";
+                $data = "$data<td>{$student->studentnummer}</td>";
+                $data = "$data<td>{$student->telefoonnummer}</td>";
+                $data = "$data</tr>";
         }
+        $data = "$data</table>";
         return $data;
     }
 }
